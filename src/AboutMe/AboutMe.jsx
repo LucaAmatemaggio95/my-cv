@@ -22,8 +22,10 @@ const AboutMe = () => {
                         sx={{borderRadius: '50%', width: 'auto', marginRight: theme.spacing(3)}}
                     />
                     <Box mt={2}>
+                        <Typography variant="h6" gutterBottom align={matches ? 'center' : 'left'}>
+                            Luca Amatemaggio
+                        </Typography>
                         <Typography variant="body1">
-                            I'm a dynamic and positive person, always trying to learn something new and improving my skills and myself.<br/>
                             I love to work in team, sharing, completing, and overcoming difficulties together with other people on a common goal.<br/>
                             Very detail oriented, I always try to improve projects while also keeping an eye on the business needs.
                         </Typography>

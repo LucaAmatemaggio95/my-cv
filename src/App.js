@@ -20,7 +20,8 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Montserrat", sans serif',
     body1: {
-        fontWeight: 500,
+        fontWeight: 400,
+        textAlign: 'justify'
     },
     h5: {
         fontWeight: 600

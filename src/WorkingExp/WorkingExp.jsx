@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, Hidden, Typography } from '@mui/material'
-import { TodayOutlined } from '@mui/icons-material'
 import React from 'react'
 import { Box } from '@mui/system'
 
@@ -18,7 +17,7 @@ const WorkingExp = () => {
             </Box>
             <Hidden smDown>
               <Box>
-                <img src='./rexroth_logo.png' height={'50vh'} />
+                <img src='./rexroth_logo.png' alt="logo" height={'50vh'} />
               </Box>
             </Hidden>
           </Box>
