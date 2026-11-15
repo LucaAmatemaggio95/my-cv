@@ -16,7 +16,16 @@ body,
 body {
   background: #f3f6fa;
   color: #172b3d;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Plus Jakarta Sans Variable', sans-serif;
 }
 
 .cv-card {
