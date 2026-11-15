@@ -1,11 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html {
-  background-color: #0C1F31;
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #f3f6fa;
+  color: #172b3d;
+  font-family: Montserrat, sans-serif;
+}
+
+.cv-card {
+  border: 1px solid #dce4ec;
+  background: #fff;
+  color: #172b3d;
+}
+
+.section-title {
+  color: #456f9d;
+}
+
+.contact-info {
+  color: #456f9d;
+  border: 1px solid currentColor;
+}
+
+.company-logo {
+  display: flex;
+  flex: 0 0 110px;
+  width: 110px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid #e2e8ef;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.skill-placeholder {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.tech-pill {
+  background: #e3edf8;
+  color: #315f8d;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 61.99em) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
 }

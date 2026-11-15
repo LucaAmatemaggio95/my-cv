@@ -1,70 +1,37 @@
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { EmailOutlined, PhoneOutlined, PlaceOutlined } from '@mui/icons-material';
-import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Typography, Chip } from '@mui/material'
+import { Avatar, Card, Group, Stack, Text, Title, Badge } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
+import { IconPhone, IconMail, IconMapPin } from '@tabler/icons-react'
 import ProfilePic from './ProfilePic_1.jpg'
 
 const AboutMe = () => {
+  const compact = useMediaQuery('(max-width: 48em)')
 
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('sm'));
-    
-    return (
-        <Card>
-            <CardHeader title="About me" />
-            <CardContent>
-                <Box display={'flex'} flexWrap={matches ? 'wrap' : 'nowrap'} alignItems={'center'} justifyContent={matches ? 'center' : 'flex-start'}>
-                    <CardMedia
-                        component={'img'}
-                        height={160}
-                        image={ProfilePic}
-                        alt={'ProfilePic'}
-                        sx={{borderRadius: '50%', width: 'auto', marginRight: theme.spacing(3)}}
-                    />
-                    <Box mt={2}>
-                        <Typography variant="h6" gutterBottom align={matches ? 'center' : 'left'}>
-                            Luca Amatemaggio
-                        </Typography>
-                        <Typography variant="body1">
-                            I love to work in team, sharing, completing, and overcoming difficulties together with other people on a common goal.<br/>
-                            Very detail oriented, I always try to improve projects while also keeping an eye on the business needs.
-                        </Typography>
-                    </Box>
-                </Box>
-            </CardContent>
-            <CardActions sx={{justifyContent: 'space-around', flexWrap: matches ? 'wrap' : 'nowrap', padding: theme.spacing(3)}}>
-                <Chip
-                    color="primary"
-                    icon={<PhoneOutlined />}
-                    clickable
-                    component="a"
-                    href="tel:+393406289044"
-                    variant={'outlined'}
-                    label="3406289044"
-                    sx={{marginBottom: '8px', fontWeight: 600}}
-                />
-                <Chip
-                    color="primary"
-                    icon={<EmailOutlined />}
-                    clickable
-                    component="a"
-                    href="mailto:lamatemaggio@gmail.com"
-                    variant={'outlined'}
-                    label="lamatemaggio@gmail.com"
-                    sx={{marginBottom: '8px', fontWeight: 600}}
-                />
-                <Chip
-                    color="primary"
-                    icon={<PlaceOutlined />}
-                    component="a"
-                    href="#"
-                    variant={'outlined'}
-                    label="Ornago, MB, Italy"
-                    sx={{marginBottom: '8px', fontWeight: 600}}
-                />
-            </CardActions>
-        </Card>
-    )
+  return (
+    <Card className="cv-card" padding="lg" radius="md">
+      <Title order={3} className="section-title" mb="md">About me</Title>
+      <Group align="center" justify={compact ? 'center' : 'flex-start'} wrap="wrap" gap="lg">
+        <Avatar src={ProfilePic} alt="Luca Amatemaggio" size={160} radius={100} />
+        <Stack gap="xs" style={{ flex: 1, minWidth: 240 }}>
+          <Title order={4} ta={compact ? 'center' : 'left'}>Luca Amatemaggio</Title>
+          <Text>
+            I love to work in a team, sharing, completing, and overcoming difficulties together with other people on a common goal.
+            Very detail-oriented, I always try to improve projects while keeping an eye on business needs.
+          </Text>
+        </Stack>
+      </Group>
+      <Group justify="space-around" mt="xl" gap="sm" wrap="wrap">
+        <Badge component="a" href="tel:+393406289044" variant="outline" className="contact-info" size="lg" leftSection={<IconPhone size={16} />}>
+          3406289044
+        </Badge>
+        <Badge component="a" href="mailto:lamatemaggio@gmail.com" variant="outline" className="contact-info" size="lg" leftSection={<IconMail size={16} />}>
+          lamatemaggio@gmail.com
+        </Badge>
+        <Badge variant="outline" className="contact-info" size="lg" leftSection={<IconMapPin size={16} />}>
+          Ornago, MB, Italy
+        </Badge>
+      </Group>
+    </Card>
+  )
 }
 
 export default AboutMe

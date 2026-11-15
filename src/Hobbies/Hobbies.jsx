@@ -1,35 +1,13 @@
-import { Card, CardContent, CardHeader, Typography } from '@mui/material'
-import React from 'react'
+import { Card, Text, Title } from '@mantine/core'
 
-const Hobbies = () => {
-
-    const EmojiBike = React.memo(({ className, label, symbol }) =>
-    <span className={className} role="img" aria-label={label}>
-        {String.fromCodePoint('0x1F6B5')}
-    </span>);
-
-    const EmojiCar = React.memo(({ className, label, symbol }) =>
-    <span className={className} role="img" aria-label={label}>
-        {String.fromCodePoint('0x1F697')}
-    </span>);
-
-    const EmojiTech = React.memo(({ className, label, symbol }) =>
-    <span className={className} role="img" aria-label={label}>
-        {String.fromCodePoint('0x1F4BB')}
-    </span>);
-
-    return (
-        <Card>
-            <CardHeader title="Hobbies" />
-            <CardContent>
-                <Typography variant="body1">
-                    I love hiking and mountin biking, I like to ride on downhill tracks and make long bike tours with friends <EmojiBike /><br/>
-                    I'm very passionate about cars and the automotive world, from F1 to Lego supercars models <EmojiCar /><br/>
-                    I also really like to stay up to date with the latest tech news and trends, discovering new technologies and learning how they work <EmojiTech />
-                </Typography>
-            </CardContent>
-        </Card>   
-    )
-}
+const Hobbies = () => (
+  <Card className="cv-card" padding="lg" radius="md">
+    <Title order={3} className="section-title" mb="md">Hobbies</Title>
+    <Text>
+      I love mountain biking and downhill racing, so every now and then I organize bike park days or long tours with my friends 🚵.
+      I am also really into Formula 1 and very passionate about the wine world. I like to keep up with the latest tech trends and always try to learn something new 💻.
+    </Text>
+  </Card>
+)
 
 export default Hobbies
